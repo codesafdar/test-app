@@ -44,7 +44,7 @@ const Library = () => {
         Library
       </div>
       <div>
-        <Tabs defaultActiveKey="2" items={items} onChange={onChange} />
+        <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
       </div>
     </div>
   )
