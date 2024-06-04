@@ -37,9 +37,8 @@ const Dashboard = () => {
       label: 'Annales',
     },
     {
-      key: 'divider1',
       type: 'divider',
-      backgroundColor: '#404040'
+      style: { backgroundColor: '#404040' }
     },
     {
       key: '4',
@@ -55,16 +54,6 @@ const Dashboard = () => {
       key: '6',
       icon: <HistoryOutlined />,
       label: 'History',
-    },
-    {
-      key: '7',
-      icon: <QuestionCircleOutlined />,
-      label: 'Help',
-    },
-    {
-      key: '8',
-      icon: <LogoutOutlined />,
-      label: 'Log out',
     },
   ]
 
@@ -106,14 +95,12 @@ const Dashboard = () => {
 
   const FavoritesContainer = () => (
     <div
-      className='favorites-container'
-    >
+      className='favorites-container'>
       {favorites.map((item) => (
         <FavoriteItem key={item.key} {...item} />
       ))}
     </div>
   )
-
 
   return (
     <Row className='dash-main'>
@@ -136,15 +123,8 @@ const Dashboard = () => {
               mode="inline"
               defaultSelectedKeys={['2']}
               theme='dark'
-              style={{ backgroundColor: '#1f1f1f', color: '#fff', borderRight: 0 }}
-              items={menuItems.slice(0, 4)}
-            />
-            <Divider style={{ backgroundColor: '#404040' }} />
-            <Menu
-              mode="inline"
-              theme='dark'
-              style={{ backgroundColor: '#1f1f1f', color: '#fff', borderRight: 0 }}
-              items={menuItems.slice(4, 7)}
+              style={{ backgroundColor: '#1f1f1f' }}
+              items={menuItems}
             />
             <Divider style={{ backgroundColor: '#404040' }} />
             <div className='textCenter mb-20'>
@@ -153,12 +133,15 @@ const Dashboard = () => {
             <Text style={{ color: '#85868E' }} className='semiBold'>FAVORITES</Text>
             <FavoritesContainer />
           </div>
-          <Menu
-            mode="inline"
-            theme='dark'
-            style={{ backgroundColor: '#1f1f1f', color: '#fff', borderRight: 0 }}
-            items={menuItems.slice(7)}
-          />
+          <div className='logout-block mt-20 flex flexCol ml-40'>
+            <div className='mb-20 pointer'>
+              <QuestionCircleOutlined />
+              <span className='ml-10'>Help</span>
+            </div>
+            <div className='pointer'>
+              <LogoutOutlined />  <span className='ml-10'>Logout</span>
+            </div>
+          </div>
         </Sider>
       </Col>
       <Col span={19}>
