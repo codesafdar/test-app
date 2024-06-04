@@ -1,0 +1,86 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+$spaceamounts: (0, 1, 2, 3, 4, 5, 8, 10, 12, 14, 15, 16, 20, 24, 25, 26, 30, 35, 40, 45, 50, 75, 80, 90, 100);
+$sides: (top, bottom, left, right);
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+  .fs-#{$space} {
+    font-size: #{$space}px !important;
+  }
+  .fw-#{$space} {
+    font-weight: #{$space} !important;
+  }
+  .w-#{$space} {
+    width: #{$space}rem !important;
+  }
+  .h-#{$space} {
+    height: #{$space}rem !important;
+  }
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+.bold { 
+  font-weight: bold !important;
+ }
+.semiBold {
+  font-weight: 600 !important;
+}
+.fsmall {
+  font-weight: 500 !important;
+}
+.pointer {
+  cursor: pointer;
+}
+.text {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+.paragraph {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+.height_100 {
+ height: 100vh;
+}
+.flex {
+  display: flex;
+}
+.justifyCenter {
+  justify-content: center;
+}
+.itemsCenter {
+  align-items: center;
+}
+.justifyBetween {
+  justify-content: space-between;
+}
+.flexCol {
+  flex-direction: column;
+}
+* {
+  box-sizing: border-box;
+}
+.white {
+  color: white;
+}
+.textCenter {
+  text-align: center;
+}
